@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince - Digital Creator Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Fixed background animation canvas -->
+    <div class="canvas-container">
+        <!-- Background original frame -->
+        <canvas id="bg-canvas"></canvas>
+
+        <!-- Text sandwiched in between -->
+        <h1 class="hero-bg-text">PORTFOLIO</h1>
+
+        <!-- Foreground frame (background removed) -->
+        <canvas id="fg-canvas"></canvas>
+
+        <div class="canvas-overlay"></div>
+    </div>
+
+    <!-- Main content layer -->
+    <main class="content-wrapper">
+
+        <!-- HEADER -->
+        <header class="top-header container">
+            <div class="header-left">
+                <span>WEB DESIGNER</span><br>
+                <span class="text-muted">DIGITAL CREATOR</span>
+            </div>
+            <div class="header-right">
+                <span class="text-muted">AVAILABLE FOR FREELANCE</span>
+                <span class="star-icon">✦</span>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section container">
+
+            <div class="hero-content">
+                <div class="hero-left">
+                    <p class="greeting cursive">Hello, I'm</p>
+                    <h2 class="name">PRINCE<br>SRIVASTAVA</h2>
+                    <h3 class="role">WEB DESIGNER &<br>UI/UX CREATOR</h3>
+                    <p class="description">
+                        I design and build stylish, user-focused web experiences that combine creativity with strategy.
+                        Passionate about clean design, smooth interactions, and details that make a difference.
+                    </p>
+                    <div class="worldwide-badge">
+                        <span class="globe-icon">🌐</span> AVAILABLE WORLDWIDE
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="turning-ideas">
+                        <span class="star-icon-large">✦</span>
+                        <p>Turning ideas<br>into powerful<br>digital experiences.</p>
+                    </div>
+
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">YEARS<br>EXPERIENCE</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">40+</span>
+                            <span class="stat-label">PROJECTS<br>COMPLETED</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">HAPPY<br>CLIENTS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTED PROJECTS -->
+        <section class="projects-section container">
+            <div class="section-header">
+                <h2>SELECTED PROJECTS</h2>
+                <a href="#" class="view-all">VIEW ALL PROJECTS ⟶</a>
+            </div>
+
+            <div class="projects-grid reveal-stagger">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image-placeholder p-veloce">
+                        <div class="mock-header">
+                            <span class="mock-logo">VELOCE</span>
+                            <div class="mock-nav"><span class="line"></span></div>
+                        </div>
+                        <h3 class="mock-title">VELOCE<br><span class="highlight">BICYCLE</span></h3>
+                        <p class="mock-desc">RIDE BEYOND LIMITS</p>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">01</span>
+                        <div class="project-details">
+                            <h4>VELOCE BIKES</h4>
+                            <p>E-COMMERCE WEBSITE</p>
+                        </div>
+                        <span class="arrow">⟶</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image-placeholder p-woodcraft">
+                        <div class="mock-header light">
+                            <span class="mock-logo">WOODCRAFT</span>
+                            <div class="mock-nav"><span class="line"></span></div>
+                        </div>
+                        <h3 class="mock-title dark-text">Timeless<br>Crafted<br>Furniture</h3>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">02</span>
+                        <div class="project-details">
+                            <h4>WOODCRAFT</h4>
+                            <p>FURNITURE WEBSITE</p>
+                        </div>
+                        <span class="arrow">⟶</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image-placeholder p-urbanic">
+                        <div class="mock-header">
+                            <span class="mock-logo">URBANIC</span>
+                            <div class="mock-nav"><span class="line"></span></div>
+                        </div>
+                        <h3 class="mock-title">STAY<br>AHEAD<br>IN STYLE</h3>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-number">03</span>
+                        <div class="project-details">
+                            <h4>URBANIC</h4>
+                            <p>FASHION MAGAZINE</p>
+                        </div>
+                        <span class="arrow">⟶</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION, SKILLS & PROCESS -->
+        <section class="details-section container">
+
+            <!-- Left Column: Education & Skills -->
+            <div class="edu-skills-col reveal-left">
+                <h2>EDUCATION & SKILLS</h2>
+
+                <h3 class="sub-heading red">EDUCATION</h3>
+                <div class="edu-item">
+                    <div class="edu-info">
+                        <h4>B.Sc. in Visual Communication Design</h4>
+                        <p>Binus University</p>
+                    </div>
+                    <span class="edu-year">2018 - 2022</span>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-info">
+                        <h4>UI/UX Design Certification</h4>
+                        <p>Google Career Certificates</p>
+                    </div>
+                    <span class="edu-year">2023</span>
+                </div>
+
+                <h3 class="sub-heading red mt-large">SKILLS</h3>
+                <div class="skills-container">
+                    <span class="skill-pill">WEB DESIGN</span>
+                    <span class="skill-pill">UI/UX DESIGN</span>
+                    <span class="skill-pill">FIGMA</span>
+                    <span class="skill-pill">FRAMER</span>
+                    <span class="skill-pill">ADOBE XD</span>
+                    <span class="skill-pill">PHOTOSHOP</span>
+                    <span class="skill-pill">WEBFLOW</span>
+                    <span class="skill-pill">HTML / CSS</span>
+                    <span class="skill-pill">JAVASCRIPT</span>
+                    <span class="skill-pill">GSAP ANIMATION</span>
+                    <span class="skill-pill">SEO BASICS</span>
+                </div>
+            </div>
+
+            <!-- Middle Column: Work Process -->
+            <div class="process-col reveal">
+                <h2>WORK PROCESS</h2>
+
+                <div class="timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-step">
+                        <span class="step-num">01</span>
+                        <div class="step-icon">🔍</div>
+                        <div class="step-content">
+                            <h4>DISCOVER</h4>
+                            <p>Understanding goals, audience, and project requirements.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="timeline-step">
+                        <span class="step-num">02</span>
+                        <div class="step-icon">💡</div>
+                        <div class="step-content">
+                            <h4>IDEATE</h4>
+                            <p>Planning, wireframing, and creating the right concept.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="timeline-step">
+                        <span class="step-num">03</span>
+                        <div class="step-icon">✏️</div>
+                        <div class="step-content">
+                            <h4>DESIGN</h4>
+                            <p>Crafting visual design with a focus on user experience.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="timeline-step">
+                        <span class="step-num">04</span>
+                        <div class="step-icon">&lt;/&gt;</div>
+                        <div class="step-content">
+                            <h4>DEVELOP</h4>
+                            <p>Building fast, responsive, and high-performing websites.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="timeline-step">
+                        <span class="step-num">05</span>
+                        <div class="step-icon">🚀</div>
+                        <div class="step-content">
+                            <h4>DELIVER</h4>
+                            <p>Testing, optimizing, and launching with perfection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Quote Block -->
+            <div class="quote-col reveal-right">
+                <div class="quote-box">
+                    <span class="quote-mark">"</span>
+                    <p class="quote-text">Good design is not just how it looks, but how it works.</p>
+                    <p class="signature cursive">Prince</p>
+                    <p class="quote-footer">LET'S CREATE SOMETHING GREAT TOGETHER. <span class="star-icon">✦</span></p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>CLIENT TESTIMONIALS</h2>
+                    <span class="text-muted">WHAT PEOPLE SAY</span>
+                </div>
+
+                <div class="testimonials-grid reveal-stagger">
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Prince delivered an absolutely stunning portfolio website for our
+                            brand. His eye for detail and the smooth animations he built completely exceeded our
+                            expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <h4>Arjun Kapoor</h4>
+                                <p>Founder, AK Studios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card featured">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Working with Prince was a game-changer. He transformed our outdated
+                            website into a modern, high-converting experience. The design is premium, clean, and
+                            incredibly fast."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sarah Mitchell</h4>
+                                <p>CEO, Woodcraft Co.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Prince has an incredible ability to blend creativity with strategy.
+                            Our fashion magazine website saw a 3x increase in engagement after his redesign. Highly
+                            recommended!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NR</div>
+                            <div class="author-info">
+                                <h4>Nina Rodriguez</h4>
+                                <p>Editor, Urbanic Magazine</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER / CONTACT -->
+        <footer class="footer-section container">
+            <div class="footer-content">
+                <div class="footer-left reveal-left">
+                    <h2 class="footer-title">LET'S WORK<br>TOGETHER <span class="star-icon-small">✦</span></h2>
+                    <p class="footer-desc">I'm currently open for new projects and collaborations. Let's create
+                        something amazing that drives results.</p>
+                    <a href="#" class="view-all mt-large d-block">⟶ AVAILABLE FOR FREELANCE</a>
+                </div>
+
+                <div class="footer-middle reveal">
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>hello@princesrivastava.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🌐</span>
+                        <span>www.princesrivastava.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+62 812 3456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                </div>
+
+                <div class="footer-right reveal-right">
+                    <div class="laptop-placeholder">
+                        <div class="screen-content">
+                            <h4>WE<br>DESIGN<br>DIGITAL<br>EXPERIENCES</h4>
+                            <div class="red-blocks">
+                                <div class="block b1"></div>
+                                <div class="block b2"></div>
+                            </div>
+                        </div>
+                        <div class="laptop-base"></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- BOTTOM BAR -->
+        <div class="bottom-footer container">
+            <p>&copy; 2026 Prince Srivastava. All rights reserved.</p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
