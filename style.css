@@ -287,6 +287,8 @@ a:hover { color: var(--primary-red); }
 .skills-container { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 .skill-pill { padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: 20px; font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); transition: all 0.3s; cursor: default; }
 .skill-pill:hover { border-color: var(--primary-red); color: var(--text-main); background: rgba(204, 0, 0, 0.1); }
+a.skill-pill { cursor: pointer; text-decoration: none; }
+a.skill-pill:hover { box-shadow: 0 4px 12px rgba(204, 0, 0, 0.2); }
 
 /* Timeline */
 .timeline { position: relative; }
