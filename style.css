@@ -470,24 +470,39 @@ a:hover { color: var(--primary-red); }
     letter-spacing: 1px;
 }
 
-/* Responsive adjustments */
+/* ==============================================
+   RESPONSIVE — TABLET LARGE (≤ 1200px)
+   Minor padding adjustments only
+   ============================================== */
 @media (max-width: 1200px) {
     .container { padding: 0 3rem; }
     .projects-section, .details-section, .footer-section, .testimonials-section { padding: 5rem 3rem; }
 }
 
+/* ==============================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   Two-column layouts, readable text
+   ============================================== */
 @media (max-width: 1024px) {
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-    .details-section, .footer-content { grid-template-columns: 1fr; gap: 4rem; }
+    /* Layout */
+    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .details-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 3rem; }
+    .footer-content { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    
+    /* Hero */
     .hero-bg-text { font-size: 40vw; }
-    .hero-content { flex-direction: column; align-items: flex-start; gap: 4rem; }
-    .hero-right { align-items: flex-start; text-align: left; gap: 2rem; }
-    .stats-container { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 3rem; }
-    .stat-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .hero-content { flex-direction: column; align-items: flex-start; gap: 3rem; }
+    .hero-right { align-items: flex-start; text-align: left; gap: 2rem; width: 100%; }
+    .stats-container { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 2.5rem; }
+    .stat-item { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
     .stat-number { font-size: 3rem; }
     .turning-ideas { text-align: left; max-width: 100%; }
     
-    /* Animated Swipeable Testimonials Carousel for Tablet/Mobile */
+    /* Footer laptop graphic on tablet — hide to save space */
+    .footer-right { display: none; }
+    .footer-content { grid-template-columns: 1fr 1fr; }
+
+    /* Testimonials — horizontal swipe carousel */
     .testimonials-grid { 
         display: flex; 
         flex-wrap: nowrap; 
@@ -495,75 +510,181 @@ a:hover { color: var(--primary-red); }
         scroll-snap-type: x mandatory; 
         scroll-behavior: smooth;
         gap: 1.5rem; 
-        padding-bottom: 2rem; 
+        padding-bottom: 1.5rem; 
         -webkit-overflow-scrolling: touch; 
-        scrollbar-width: none; /* Hide scrollbar Firefox */
-        margin-right: -3rem; /* Allow bleeding off edge */
+        scrollbar-width: none;
+        margin-right: -3rem;
         padding-right: 3rem;
     }
-    .testimonials-grid::-webkit-scrollbar { display: none; /* Hide scrollbar Chrome/Safari */ }
-    
+    .testimonials-grid::-webkit-scrollbar { display: none; }
     .testimonial-card { 
-        flex: 0 0 60%; 
+        flex: 0 0 58%; 
         scroll-snap-align: center; 
-        margin-bottom: 0; /* Override any grid margin */
+        margin-bottom: 0;
     }
 }
 
+/* ==============================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   Single column, optimized spacing & typography
+   ============================================== */
 @media (max-width: 768px) {
-    .container { padding: 0 1.5rem; }
-    .projects-section, .details-section, .footer-section, .testimonials-section { padding: 4rem 1.5rem; }
-    
-    .top-header { flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
+    /* Global */
+    .container { padding: 0 1.2rem; }
+
+    /* Header */
+    .top-header {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+        text-align: center;
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
     .header-right { justify-content: center; }
+    .top-header span { font-size: 0.8rem; letter-spacing: 1.5px; }
 
-    .hero-section { padding: 8rem 0 4rem 0; min-height: auto; }
+    /* Hero */
+    .hero-section { padding: 6rem 0 4rem 0; min-height: auto; }
     .hero-bg-text { display: none; }
-    .greeting { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    .name { font-size: 4.5rem; line-height: 0.95; }
-    .role { font-size: 1rem; margin-bottom: 1rem; }
-    
-    .projects-grid { grid-template-columns: 1fr; }
-    
-    /* Adjust Testimonial Carousel for Phone */
-    .testimonials-grid {
-        margin-right: -1.5rem; 
-        padding-right: 1.5rem;
+    .hero-content { gap: 2.5rem; }
+    .hero-left { width: 100%; }
+    .greeting { font-size: 2.2rem; margin-bottom: 0.6rem; }
+    .name { font-size: 4rem; line-height: 0.92; letter-spacing: 1px; }
+    .role { font-size: 1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .description { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.6); }
+    .worldwide-badge { font-size: 0.75rem; margin-top: 0.5rem; }
+    .hero-right { width: 100%; }
+    .turning-ideas { font-size: 0.85rem; max-width: 100%; }
+    .stats-container { 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        gap: 1.5rem 2.5rem;
+        justify-content: flex-start;
     }
-    .testimonial-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
+    .stat-item { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+    .stat-number { font-size: 2.8rem; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 1.5px; }
+
+    /* Sections */
+    .projects-section { padding: 4rem 1.2rem; }
+    .details-section { padding: 4rem 1.2rem; gap: 2.5rem; }
+    .testimonials-section { padding: 4rem 0; }
+    .footer-section { padding: 4rem 1.2rem; }
+
+    /* Section Header */
+    .section-header { flex-direction: column; align-items: flex-start; gap: 0.8rem; padding-bottom: 1.2rem; }
+    .section-header h2 { font-size: 1.3rem; }
+    .view-all { font-size: 0.75rem; }
+
+    /* Projects */
+    .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .project-image-placeholder { height: 220px; padding: 1.2rem; }
+    .mock-title { font-size: 2.2rem; }
+    .project-info { gap: 1rem; }
+    .project-number { font-size: 2rem; }
+    .project-details h4 { font-size: 0.9rem; }
+
+    /* Education & Skills */
+    .details-section h2 { font-size: 1.3rem; margin-bottom: 2rem; }
+    .edu-item { 
+        flex-direction: column; 
+        gap: 0.4rem;
+        padding-bottom: 1.2rem;
+        margin-bottom: 1.2rem;
     }
-    
-    .project-image-placeholder { height: 250px; padding: 1.5rem; }
-    
+    .edu-info h4 { font-size: 0.9rem; }
+    .edu-year { font-size: 0.85rem; }
+    .skills-container { gap: 0.6rem; }
+    .skill-pill { font-size: 0.65rem; padding: 0.45rem 0.85rem; }
+
+    /* Timeline */
     .timeline::before { left: 10px; }
-    .step-icon { width: 24px; height: 24px; font-size: 0.6rem; margin-left: -48px; }
-    .step-num { font-size: 1.2rem; width: 25px; }
-    .timeline-step { gap: 1rem; }
-    
-    .quote-box { padding: 2rem; }
+    .step-icon { width: 26px; height: 26px; font-size: 0.65rem; margin-left: -49px; }
+    .step-num { font-size: 1.1rem; width: 26px; }
+    .timeline-step { gap: 1rem; margin-bottom: 2rem; }
+    .step-content h4 { font-size: 0.85rem; }
+    .step-content p { font-size: 0.8rem; }
+
+    /* Quote Box */
+    .quote-box { padding: 2rem 1.5rem; }
     .quote-mark { font-size: 4rem; top: 0.5rem; left: 1rem; }
-    .quote-text { font-size: 1.2rem; }
-    
-    .footer-title { font-size: 2.8rem; }
-    
-    .laptop-placeholder { max-width: 100%; }
-    .screen-content { padding: 1.5rem; }
-    .screen-content h4 { font-size: 1rem; }
-    
-    .bottom-footer { padding: 1.5rem; }
+    .quote-text { font-size: 1.1rem; line-height: 1.5; }
+    .signature { font-size: 2.5rem; margin-bottom: 2rem; }
+
+    /* Testimonials */
+    .testimonials-grid {
+        margin-right: -1.2rem;
+        padding-right: 1.2rem;
+        gap: 1rem;
+        padding-bottom: 1.2rem;
+    }
+    .testimonial-card { 
+        flex: 0 0 82%;
+        scroll-snap-align: center;
+        padding: 1.8rem 1.5rem;
+    }
+    .testimonial-text { font-size: 0.88rem; line-height: 1.7; }
+    .author-info h4 { font-size: 0.9rem; }
+
+    /* Footer */
+    .footer-content { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-right { display: none; }
+    .footer-title { font-size: 2.6rem; line-height: 1.05; margin-bottom: 1rem; }
+    .footer-desc { font-size: 0.88rem; max-width: 100%; }
+    .footer-middle { gap: 1.2rem; }
+    .contact-item { font-size: 0.88rem; gap: 0.8rem; }
+    .contact-icon { width: 36px; height: 36px; font-size: 0.9rem; }
+    .view-all.mt-large { margin-top: 1.5rem; font-size: 0.8rem; }
+
+    /* Bottom bar */
+    .bottom-footer { padding: 1.2rem 1.2rem; font-size: 0.75rem; }
 }
 
+/* ==============================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   Very compact, maximum readability
+   ============================================== */
 @media (max-width: 480px) {
-    .name { font-size: 3.2rem; }
-    .greeting { font-size: 2rem; margin-bottom: 0.5rem; }
-    .stat-number { font-size: 2.5rem; }
-    .mock-title { font-size: 2rem; }
-    .footer-title { font-size: 2.2rem; }
-    .edu-item { flex-direction: column; gap: 0.5rem; }
-    .stats-container { flex-direction: column; gap: 2rem; }
+    .container { padding: 0 1rem; }
+
+    /* Hero */
+    .hero-section { padding: 5.5rem 0 3rem 0; }
+    .greeting { font-size: 1.9rem; margin-bottom: 0.5rem; }
+    .name { font-size: 3.4rem; line-height: 0.9; }
+    .role { font-size: 0.9rem; letter-spacing: 1.5px; }
+    .description { font-size: 0.85rem; }
+    .stat-number { font-size: 2.4rem; }
+    .stats-container { gap: 1.2rem 2rem; }
+
+    /* Projects */
+    .mock-title { font-size: 1.8rem; }
+    .project-image-placeholder { height: 200px; }
+
+    /* Skills */
+    .skill-pill { font-size: 0.6rem; padding: 0.4rem 0.75rem; }
+
+    /* Footer */
+    .footer-title { font-size: 2rem; }
+    .footer-middle { gap: 1rem; }
+    .contact-icon { width: 32px; height: 32px; }
+
+    /* Sections */
+    .projects-section,
+    .details-section,
+    .footer-section { padding: 3rem 1rem; }
+    .testimonials-section { padding: 3rem 0; }
+    .details-section h2 { font-size: 1.2rem; }
+    .section-header h2 { font-size: 1.15rem; }
+
+    /* Quote */
+    .quote-text { font-size: 1rem; }
+    .quote-box { padding: 1.5rem 1.2rem; }
+
+    /* Bottom */
+    .bottom-footer { padding: 1rem; font-size: 0.7rem; }
 }
+
 
 /* =============================================
    BIDIRECTIONAL SCROLL-REVEAL ANIMATIONS
