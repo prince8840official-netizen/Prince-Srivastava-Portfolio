@@ -849,6 +849,7 @@ a:hover { color: var(--primary-red); }
 .skills-container.visible .skill-pill:nth-child(9)  { transition-delay: 0.40s; }
 .skills-container.visible .skill-pill:nth-child(10) { transition-delay: 0.45s; }
 .skills-container.visible .skill-pill:nth-child(11) { transition-delay: 0.50s; }
+.skills-container.visible .skill-pill:nth-child(12) { transition-delay: 0.55s; }
 
 /* Section borders fade in */
 .section-header {
