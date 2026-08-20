@@ -566,13 +566,23 @@ a:hover { color: var(--primary-red); }
 }
 
 /* =============================================
-   SCROLL-REVEAL ANIMATIONS
-   Elements start hidden and animate in when
-   they enter the viewport.
-   JS adds .visible class via IntersectionObserver.
+   BIDIRECTIONAL SCROLL-REVEAL ANIMATIONS
+   Elements animate in when entering viewport
+   and animate out when leaving viewport.
+   JS adds/removes .visible & .hidden-out classes.
    ============================================= */
 
-.reveal {
+/* Base hidden state (initial + scroll-out) */
+.reveal,
+.project-card,
+.testimonial-card,
+.contact-item,
+.edu-item,
+.stat-item,
+.quote-box,
+.worldwide-badge,
+.footer-title,
+.footer-desc {
     opacity: 0;
     transform: translateY(32px);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -580,11 +590,39 @@ a:hover { color: var(--primary-red); }
     will-change: opacity, transform;
 }
 
-.reveal.visible {
+/* Animate IN */
+.reveal.visible,
+.project-card.visible,
+.testimonial-card.visible,
+.contact-item.visible,
+.edu-item.visible,
+.stat-item.visible,
+.quote-box.visible,
+.worldwide-badge.visible,
+.footer-title.visible,
+.footer-desc.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Animate OUT (scroll away) — subtle slide out */
+.reveal.hidden-out,
+.project-card.hidden-out,
+.testimonial-card.hidden-out,
+.contact-item.hidden-out,
+.edu-item.hidden-out,
+.stat-item.hidden-out,
+.quote-box.hidden-out,
+.worldwide-badge.hidden-out,
+.footer-title.hidden-out,
+.footer-desc.hidden-out {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Left slide */
 .reveal-left {
     opacity: 0;
     transform: translateX(-40px);
@@ -596,7 +634,13 @@ a:hover { color: var(--primary-red); }
     opacity: 1;
     transform: translateX(0);
 }
+.reveal-left.hidden-out {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
+/* Right slide */
 .reveal-right {
     opacity: 0;
     transform: translateX(40px);
@@ -608,7 +652,13 @@ a:hover { color: var(--primary-red); }
     opacity: 1;
     transform: translateX(0);
 }
+.reveal-right.hidden-out {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
+/* Scale reveal */
 .reveal-scale {
     opacity: 0;
     transform: scale(0.92);
@@ -619,6 +669,11 @@ a:hover { color: var(--primary-red); }
 .reveal-scale.visible {
     opacity: 1;
     transform: scale(1);
+}
+.reveal-scale.hidden-out {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /* Staggered delays for grid children */
@@ -634,6 +689,8 @@ a:hover { color: var(--primary-red); }
 .reveal-stagger.visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
 .reveal-stagger.visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
 .reveal-stagger.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.48s; }
+.reveal-stagger.hidden-out > * { opacity: 0; transform: translateY(-16px); transition-delay: 0s; }
+
 
 /* Staggered timeline steps */
 .timeline .timeline-step {

@@ -84,25 +84,30 @@ window.addEventListener('scroll', () => {
 });
 
 // =============================================
-// SCROLL-REVEAL via IntersectionObserver
-// Efficient: one observer, no scroll listeners,
-// GPU-friendly opacity + transform transitions.
+// BIDIRECTIONAL SCROLL-REVEAL
+// Elements animate in when scrolled into view
+// and animate out when scrolled out of view,
+// for a smooth, cinematic scroll experience.
 // =============================================
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Scrolling INTO view — animate in
             entry.target.classList.add('visible');
-            // Once revealed, stop observing to save resources
-            revealObserver.unobserve(entry.target);
+            entry.target.classList.remove('hidden-out');
+        } else {
+            // Scrolling OUT of view — animate out (reverse)
+            entry.target.classList.remove('visible');
+            entry.target.classList.add('hidden-out');
         }
     });
 }, {
-    threshold: 0.12,      // Trigger when 12% of element is visible
-    rootMargin: '0px 0px -40px 0px'  // Small offset so animation fires slightly before full entry
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
 });
 
-// Observe all reveal targets
+// All selectors to observe — covers every section
 const revealSelectors = [
     '.reveal',
     '.reveal-left',
@@ -111,12 +116,23 @@ const revealSelectors = [
     '.reveal-stagger',
     '.section-header',
     '.timeline',
-    '.skills-container'
+    '.skills-container',
+    '.project-card',
+    '.testimonial-card',
+    '.edu-item',
+    '.timeline-step',
+    '.contact-item',
+    '.footer-title',
+    '.footer-desc',
+    '.stat-item',
+    '.quote-box',
+    '.worldwide-badge'
 ];
 
 document.querySelectorAll(revealSelectors.join(', ')).forEach(el => {
     revealObserver.observe(el);
 });
+
 
 // =============================================
 // LENIS SMOOTH SCROLLING SETUP
