@@ -519,7 +519,7 @@ a:hover { color: var(--primary-red); }
 
     .hero-section { padding: 8rem 0 4rem 0; min-height: auto; }
     .hero-bg-text { display: none; }
-    .greeting { font-size: 2.5rem; }
+    .greeting { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .name { font-size: 4.5rem; line-height: 0.95; }
     .role { font-size: 1rem; margin-bottom: 1rem; }
     
@@ -557,7 +557,7 @@ a:hover { color: var(--primary-red); }
 
 @media (max-width: 480px) {
     .name { font-size: 3.2rem; }
-    .greeting { font-size: 2rem; }
+    .greeting { font-size: 2rem; margin-bottom: 0.5rem; }
     .stat-number { font-size: 2.5rem; }
     .mock-title { font-size: 2rem; }
     .footer-title { font-size: 2.2rem; }
