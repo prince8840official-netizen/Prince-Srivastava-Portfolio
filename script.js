@@ -117,3 +117,27 @@ const revealSelectors = [
 document.querySelectorAll(revealSelectors.join(', ')).forEach(el => {
     revealObserver.observe(el);
 });
+
+// =============================================
+// LENIS SMOOTH SCROLLING SETUP
+// Provides buttery smooth inertia scrolling
+// =============================================
+
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom ease out
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false, // keep native scroll on touch devices for better feel
+    touchMultiplier: 2,
+    infinite: false,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);

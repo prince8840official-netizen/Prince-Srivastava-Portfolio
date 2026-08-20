@@ -457,23 +457,6 @@ a:hover { color: var(--primary-red); }
     letter-spacing: 1px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .projects-grid { grid-template-columns: repeat(2, 1fr); }
-    .details-section, .footer-content { grid-template-columns: 1fr; }
-    .hero-bg-text { font-size: 40vw; }
-    .hero-content { flex-direction: column; align-items: flex-start; gap: 4rem; }
-    .hero-right { align-items: flex-start; text-align: left; }
-    .stats-container, .stat-item { text-align: left; justify-content: flex-start; }
-    .turning-ideas { text-align: left; }
-}
-
-@media (max-width: 768px) {
-    .projects-grid { grid-template-columns: 1fr; }
-    .container { padding: 0 2rem; }
-    .name { font-size: 5rem; }
-}
-
 /* Bottom Bar */
 .bottom-footer {
     padding: 2rem 4rem;
@@ -485,6 +468,101 @@ a:hover { color: var(--primary-red); }
     font-size: 0.8rem;
     color: var(--text-muted);
     letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .container { padding: 0 3rem; }
+    .projects-section, .details-section, .footer-section, .testimonials-section { padding: 5rem 3rem; }
+}
+
+@media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+    .details-section, .footer-content { grid-template-columns: 1fr; gap: 4rem; }
+    .hero-bg-text { font-size: 40vw; }
+    .hero-content { flex-direction: column; align-items: flex-start; gap: 4rem; }
+    .hero-right { align-items: flex-start; text-align: left; gap: 2rem; }
+    .stats-container { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 3rem; }
+    .stat-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .stat-number { font-size: 3rem; }
+    .turning-ideas { text-align: left; max-width: 100%; }
+    
+    /* Animated Swipeable Testimonials Carousel for Tablet/Mobile */
+    .testimonials-grid { 
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        scroll-behavior: smooth;
+        gap: 1.5rem; 
+        padding-bottom: 2rem; 
+        -webkit-overflow-scrolling: touch; 
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        margin-right: -3rem; /* Allow bleeding off edge */
+        padding-right: 3rem;
+    }
+    .testimonials-grid::-webkit-scrollbar { display: none; /* Hide scrollbar Chrome/Safari */ }
+    
+    .testimonial-card { 
+        flex: 0 0 60%; 
+        scroll-snap-align: center; 
+        margin-bottom: 0; /* Override any grid margin */
+    }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 1.5rem; }
+    .projects-section, .details-section, .footer-section, .testimonials-section { padding: 4rem 1.5rem; }
+    
+    .top-header { flex-direction: column; gap: 1rem; align-items: center; text-align: center; }
+    .header-right { justify-content: center; }
+
+    .hero-section { padding: 8rem 0 4rem 0; min-height: auto; }
+    .hero-bg-text { display: none; }
+    .greeting { font-size: 2.5rem; }
+    .name { font-size: 4.5rem; line-height: 0.95; }
+    .role { font-size: 1rem; margin-bottom: 1rem; }
+    
+    .projects-grid { grid-template-columns: 1fr; }
+    
+    /* Adjust Testimonial Carousel for Phone */
+    .testimonials-grid {
+        margin-right: -1.5rem; 
+        padding-right: 1.5rem;
+    }
+    .testimonial-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+    
+    .project-image-placeholder { height: 250px; padding: 1.5rem; }
+    
+    .timeline::before { left: 10px; }
+    .step-icon { width: 24px; height: 24px; font-size: 0.6rem; margin-left: -48px; }
+    .step-num { font-size: 1.2rem; width: 25px; }
+    .timeline-step { gap: 1rem; }
+    
+    .quote-box { padding: 2rem; }
+    .quote-mark { font-size: 4rem; top: 0.5rem; left: 1rem; }
+    .quote-text { font-size: 1.2rem; }
+    
+    .footer-title { font-size: 2.8rem; }
+    
+    .laptop-placeholder { max-width: 100%; }
+    .screen-content { padding: 1.5rem; }
+    .screen-content h4 { font-size: 1rem; }
+    
+    .bottom-footer { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+    .name { font-size: 3.2rem; }
+    .greeting { font-size: 2rem; }
+    .stat-number { font-size: 2.5rem; }
+    .mock-title { font-size: 2rem; }
+    .footer-title { font-size: 2.2rem; }
+    .edu-item { flex-direction: column; gap: 0.5rem; }
+    .stats-container { flex-direction: column; gap: 2rem; }
 }
 
 /* =============================================
